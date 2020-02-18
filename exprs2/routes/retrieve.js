@@ -9,7 +9,7 @@ async function getUsers (req, res, next) {
         next(error);
     }
 }
-async function getUserDetails (req, res, next) {
+async function getUserDetails(req, res, next) {
     try {
         const user = await models.User.findOne({
             where: {

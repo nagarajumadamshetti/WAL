@@ -9,17 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER 
   }
 }  , {});
-// const UserRoles=db.define('userRoles',{
-// role_id:{
-//   type:sequelize.INTEGER,
-//   allowNull:false
-// },
 
-// })
   Role.associate = function(models) {
     // associations can be defined here
-    Role.belongsToMany(models.User);
-    models.User.hasOne(Role);
+    
   };
   return Role;
 };

@@ -11,7 +11,8 @@ type: DataTypes.INTEGER
   }, {});
   User.associate = function (models) {
     // associations can be defined here
-
+    User.belongsTo(models.Role,{foreignKey: 'roll_id'});
+    models.Role.hasMany(User,{foreignKey: 'roll_id'});
   };
   return User;
 };
