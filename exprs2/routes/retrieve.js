@@ -1,7 +1,11 @@
 const models = require('../models');
 async function getUsers (req, res, next) {
     try {
-        const users = await models.User.findAll({})
+        const users = await models.User.findAll({
+            where:{
+                softDelete:false
+            }
+        })
         res.status(200).json({
             users
         });    

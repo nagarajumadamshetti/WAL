@@ -2,10 +2,10 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    
-   return queryInterface.addColumn('Roles', 'roll_name', Sequelize.STRING, {
-    // after option is only supported by MySQL
- });
+    return queryInterface.addColumn('Users', 'softDelete', Sequelize.BOOLEAN, {
+      defaultValue:false
+      // after option is only supported by MySQL
+   });
   },
 
   down: (queryInterface, Sequelize) => {

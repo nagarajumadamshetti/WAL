@@ -2,10 +2,10 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    
-   return queryInterface.addColumn('Roles', 'roll_name', Sequelize.STRING, {
-    // after option is only supported by MySQL
- });
+    return queryInterface.addConstraint('Users',['roll_id'],{
+      type:'unique',
+      name:'unique_fkey'
+    });
   },
 
   down: (queryInterface, Sequelize) => {
