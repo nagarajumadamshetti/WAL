@@ -6,6 +6,9 @@ async function updateUser (req, res, next) {
                 id: req.params.userId
             }
         })
+        res.status(200).json({
+            user
+        })
         
     } catch (error) {
         next(error)

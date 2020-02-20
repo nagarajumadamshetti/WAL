@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
 type: DataTypes.INTEGER
 // references:models.Role.roll_id
     },
-    softDelete:DataTypes.BOOLEAN,
+    softDelete:{
+      type:DataTypes.BOOLEAN,
+    defaultValue:false
+    },
     projectId:DataTypes.INTEGER
   }, {});
   User.associate = function (models) {
