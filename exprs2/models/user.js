@@ -17,7 +17,7 @@ type: DataTypes.INTEGER
   User.associate = function (models) {
     // associations can be defined here
     User.belongsTo(models.Role,{foreignKey: 'roll_id'});
-    // models.Role.hasOne(User,{foreignKey: 'roll_id'});
+     models.Role.hasOne(User,{foreignKey: 'roll_id'});
     // User.hasOne(models.Role);
     User.belongsTo(models.Project,{foreignKey:'projectId'});
     models.Project.hasMany(User,{foreignKey:'projectId'});
