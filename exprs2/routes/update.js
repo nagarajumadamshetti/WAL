@@ -5,7 +5,7 @@ async function updateUser (req, res, next) {
             where: {
                 id: req.params.userId
             }
-        })
+        });
         res.status(200).json({
             user
         })
