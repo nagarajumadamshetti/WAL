@@ -6,56 +6,46 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Login from './Login';
-import SignUp from './signUp.js'
+import Login from './login';
+import SignUp from './signup.js'
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    // this.login=this.login.bind(this);
-    // this.signup-this.signup.bind(this);
+
+  /* Create a new instance of the 'AuthHelperMethods' compoenent*/
+  state = {
+    username: "",
+    password: ""
   }
-  //  login() {
-  //   return <h2>Login page</h2>;
-  // }
 
-  //  signUp() {
-  //   return <h2>SignUp page</h2>;
-  // }
+/* Here will want to add a method to log the user out upon clicking 'Logout' */
+  _handleLogout = () => {
+    
+    
+    this.props.history.replace('/login');
+  }
+
+  //Render the protected component
   render() {
-    return (
-      <div>
-        <Router>
-          <div>
-            <nav>
-              <table>
-                <td>
-                  <Link to="/Login">
-                    <button>login</button>
-                  </Link>
-                </td>
-                <td>
-                  <Link to="/signUp">
-                    <button>signUp</button>
-                  </Link>
-                </td>
-              </table>
-            </nav>
+    let name = null;
 
-            {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-            <Switch>
-              <Route path="/Login">
-                <Login />
-              </Route>
-              <Route path="/signUp">
-                <SignUp />
-              </Route>
-            </Switch>
+    //This will be null until we set up authentication...
+    if (this.props.confirm) {
+      name = this.props.confirm.username;
+    }
+
+    return (
+      <div className="App">
+        <div className="main-page">
+          <div className="top-section">
+            <h1>Welcome, {name}</h1>
           </div>
-        </Router>
+          <div className="bottom-section">
+            <button onClick={this._handleLogout}>LOGOUT</button>
+          </div>
+        </div>
       </div>
     );
   }
 }
+
+//In order for this component to be protected, we must wrap it with what we call a 'Higher Order Component' or HOC.
 export default App;
