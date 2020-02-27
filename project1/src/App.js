@@ -13,6 +13,7 @@ class App extends Component {
   /* Create a new instance of the 'AuthHelperMethods' compoenent*/
   state = {
     username: "",
+    
     password: ""
   }
 
