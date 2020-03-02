@@ -1,6 +1,6 @@
 // const sgMail = require('@sendgrid/mail');
 const nodemailer = require("nodemailer");
-const models = require('../models');
+const models = require('../../models');
 const passwordHash=require('password-hash');
 async function sendMail(mail) {
     let testAccount = await nodemailer.createTestAccount();
