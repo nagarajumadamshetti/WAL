@@ -15,6 +15,7 @@ async function sendMail(mail) {
         }
     });
 
+    
     // send mail with defined transport object
     let info = await transporter.sendMail({
         from: '"Fred Foo 👻" <nagarajumadamshetti@gmail.com>', // sender address

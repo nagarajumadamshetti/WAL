@@ -20,6 +20,7 @@
     "nodemailer": "^6.4.3",
     "password-hash": "^1.2.2"
   },
+  
   "main": "app.js",
   "devDependencies": {},
   "repository": {

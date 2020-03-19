@@ -16,6 +16,7 @@ async function signIn(req, res, next) {
         if(token)
         const match = passwordHash.verify(req.body.password, users.password);
 
+        
         if (match) {
             //login
             let token = await jwt.sign({ email: users.email }, 'keyboard cat 4 ever', { expiresIn: '1h' }); // Signing the token

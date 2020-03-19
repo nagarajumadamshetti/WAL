@@ -14,7 +14,6 @@ async function sendMail(mail) {
             pass: 'naga@9550' // generated ethereal password
         }
     });
-
     // send mail with defined transport object
     let info = await transporter.sendMail({
         from: '"Fred Foo 👻" <nagarajumadamshetti@gmail.com>', // sender address

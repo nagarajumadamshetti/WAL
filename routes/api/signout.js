@@ -14,6 +14,7 @@ async function signOut(req, res, next) {
                 message: " logged out successfully"
             });
         }
+        
         else {
             res.status(200).json({
                 message: " user not logged in"
